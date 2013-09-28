@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html";charset="utf-8">
+  <title>
+    <%if content_for?(:title)%>
+      Lori's Website: <%= yield :title %>
+    <%else%>
+      Lori's Website
+    <%end%>
+  </title>
+  <%= stylesheet_link_tag    "application"%>
+  <%= javascript_include_tag "application"%>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render 'layouts/header'%>
+  <div class="container">
+    <section id="content">
+      <%= yield %>
+    </section>
+    <section id="sidebar">
+      <%= yield :sidebar %>
+      <section id="recent_activity">
+        <header><h1 class="ir" id="recent">Recent Activity</h1></header>
+        <%=  render partial: 'activity_items/recent'%>
+      </section>
+    </section>
+  </div>
+  <%= render 'layouts/footer'%>
+</body>
+</html>
