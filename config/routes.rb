@@ -9,11 +9,13 @@ Lori::Application.routes.draw do
 
   # Example of regular route:
      get 'about_path' => 'main#viewAbout'
+
      get 'creations_path' => 'creations#index'
+     get 'creations/:projectid' => 'creations#show'
+
      get 'tools_path' => 'tools#index'
      get 'contact_path' => 'main#viewContact'
-     get 'vendors_path' => 'vendors#index'
-  
+     get 'vendors_path' => 'vendors#index' 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

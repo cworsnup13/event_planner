@@ -1,3 +1,32 @@
+<%render :template => 'sidebar/creations'%>
+<%render :template => "creations/content/#{@projectname}"%>
+
+<div id="mainPic">
+  <%= yield :creations_title %>
+  <%= yield :creations_mainPic%>
+<div id="creationDesc">
+<%= yield :creations_content %>
+</div>
+<%= yield :creations_subPics %>
+</div> 
+<div class="pic-table-holder">
 <h2>Creations</h2>
+<table>
+<% 8.times do |iter|%>
+<% if iter % 2 == 0 %>
+  <tr>
+<% end %>
+<td>
 
-
+<%=link_to( image_tag("greensquare.jpg",
+		 alt: "holder",
+		 id: "holder#{iter}",
+		 :class => "creation_thumb"),
+                 "/creations/#{iter}") %>
+</td>
+<% if iter % 2 == 1 %>
+  </tr>
+<% end %>
+<% end %>
+</table>
+</div>

@@ -1,5 +1,2 @@
-class Client 
-  include Mongoid::Document
-
-  field :name, type: String
+class Client < ActiveRecord::Base
 end

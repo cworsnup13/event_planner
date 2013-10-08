@@ -1,3 +1,45 @@
 // Place all the styles related to the creations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.pic-table-holder {
+  float: left;
+ 
+  h2 {
+    text-align:center
+  }
+}
+
+.creation_thumb {
+  width:150px;
+  height:150px;
+}
+
+#mainPic {
+  float: right;
+  margin-left: 10em;
+  
+  h2 {
+    text-align:center;
+  }
+  img#mainCreationPic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+  }
+  table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+#creationDesc {
+  background-color: #E1AFE3;
+  height: 5em;
+  width: 40em;
+}
+
+.subPic {
+  width: 150px;
+  height: 150px;
+}

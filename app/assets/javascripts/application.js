@@ -15,3 +15,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).on('page:load', function(){
+  var footerPos = $("#page_footer").position().top;
+  $("#sidebar").css("height",footerPos-120);
+
+});
