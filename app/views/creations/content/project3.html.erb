@@ -8,7 +8,7 @@
 <% end %>
 
 <%content_for :creations_mainPic do%>
-  <%= image_tag("redsquare.png",
+  <%= image_tag("projThumb/#{@projectname}_thumb.jpg",
                          alt: "holder",
                          id: "mainCreationPic")%>
 <% end %>
@@ -17,7 +17,7 @@
   <table><tr>
   <%4.times do |iter|%>
     <td>
-    <%= image_tag("greensquare.jpg",
+    <%= image_tag("#{@projectname}/creation_sub_thumb#{iter}.jpg",
                          alt: "holder",
                          :class => "subPic creation_thumb")%>
     </td>

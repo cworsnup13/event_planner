@@ -1,0 +1,26 @@
+<% render :template => 'vendors/nav'%>
+<% render :template => 'vendors/music/yelp' %>
+<% render :template => 'vendors/music/sidebar'%>
+<div class="vendorContainer">
+<div class="vendor-yelpholder">
+  <%= yield :yelpSearch %>
+</div>
+<div class="vendor-intro">
+<%= yield :vendor_nav %>
+<a href="#"><h2>Music and Ambience</h2></a>
+<br>
+<b>Here are some basic tips to keep in mind when looking for a caterer:</b>
+<ul>
+<li>Always do this</li>
+<li>Never do this</li>
+<li>Sometimes do this</li>
+</ul>
+</div>
+
+<table class="vendor-content">
+<tr><th>Lori's Suggestions & Preferences</th></tr>
+<%=render partial: 'vendors/supply/dannyThomas'%>
+<%=render partial: 'vendors/supply/dannyThomas'%>
+<%=render partial: 'vendors/supply/dannyThomas'%>
+</table>
+</div>

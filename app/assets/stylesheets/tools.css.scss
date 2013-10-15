@@ -9,7 +9,25 @@
   height:30em;
 }
 
+.tools_title {
+  width:20em;
+  text-align:center;
+  font-size:2em;
+  margin-bottom:2px;
+  a,a:hover,a:visited{color:black;text-decoration:none;}
+}
+
+.tools_desc{
+  float:right;
+  margin:25px;
+  width:250px;
+  height:425px;
+  text-align:center;
+  //need vertical alignment
+ background-color:green;
+}
+
 .tools_display {
-  width: 40em;
-  height: 25em;
+  width: 41em;
+  height: 27em;
 }

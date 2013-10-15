@@ -13,9 +13,12 @@ Lori::Application.routes.draw do
      get 'creations_path' => 'creations#index'
      get 'creations/:projectid' => 'creations#show'
 
+     get 'profile_path' => 'profile#index'
+     get 'submitContact' => 'main#acceptForm'
      get 'tools_path' => 'tools#index'
      get 'contact_path' => 'main#viewContact'
      get 'vendors_path' => 'vendors#index' 
+     get 'vendors_path/:vendortype' => 'vendors#show' 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

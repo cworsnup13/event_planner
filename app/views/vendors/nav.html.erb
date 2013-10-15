@@ -1,0 +1,10 @@
+<% content_for :vendor_nav do%>
+<%= link_to '<-- Vendors',"/vendors_path" %>
+<select name="post[person_id]" onchange="location = this.options[this.selectedIndex].value;">
+  <option value="">Vendor Categories</option>
+  <option value="/vendors_path/supply">Supply</option>
+  <option value="/vendors_path/cater">Catering</option>
+  <option value="/vendors_path/music">Music</option>
+  <option value="/vendors_path/venue">Venue</option>
+</select>
+<%end%>

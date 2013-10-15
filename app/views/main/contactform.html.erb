@@ -1,0 +1,15 @@
+<% content_for :contactform do%>
+
+<%= form_tag("/submitContact", method: "get") do %>
+  <p class="form_labels">Full Name</p>
+  <%= text_field_tag(:name) %>
+  <p class="form_labels">Phone Number</p>
+  <%= text_field_tag(:phone) %>
+  <p class="form_labels">Email Address</p>
+  <%= text_field_tag(:email) %>
+  <p>Short Description</p>
+  <textarea id="form-desc"></textarea>
+  <br>
+  <%= submit_tag("Submit") %>
+<% end %>
+<% end %>

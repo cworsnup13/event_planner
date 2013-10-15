@@ -14,3 +14,15 @@
  *= require navigation
  *= require_tree .
  */
+
+.titleBannerHolder {
+  margin-right:auto;
+  margin-left:auto;
+  width:900px;
+  height:450px;
+}
+
+.aboveTitleBanner {
+  width:900px;
+  height:450px;
+}

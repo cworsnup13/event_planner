@@ -15,8 +15,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$(document).on('page:load', function(){
+var fn = function(){
   var footerPos = $("#page_footer").position().top;
-  $("#sidebar").css("height",footerPos-120);
+  var headerPos = $("#page_header").position().top;
+  $("#sidebar").css("height",footerPos-120-headerPos);
 
-});
+};
+$(document).on('page:load', fn);
+$(document).ready(fn);
+

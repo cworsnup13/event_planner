@@ -1,0 +1,6 @@
+<% content_for :yelpSearch do %>
+<%@yelpURL = "http://www.yelp.com/search?find_desc=event+supply&find_loc=san+jose&ns=1&ls=4d6d1eeb5fe90e75#find_desc=party+rental"%>
+<iframe src=<%=@yelpURL%> width="500" height="500">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+<% end %> 

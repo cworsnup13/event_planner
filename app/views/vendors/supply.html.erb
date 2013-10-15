@@ -1,0 +1,20 @@
+<% render :template => 'vendors/nav'%>
+<% render :template => 'vendors/supply/yelp'%>
+<% render :template => 'vendors/supply/sidebar'%>
+<div class="vendorContainer">
+<div class="vendor-yelpholder">
+<%= yield :yelpSearch%>
+</div>
+<div class="vendor-intro">
+<%= yield :vendor_nav %>
+<a href="#"><h2>Supply Rentals</h2></a>
+<h3><b>Coming Soon...</b></h3>
+<p>A tool to parse through all of the local vendors. Compare, like, and save!</p>
+</div>
+<table class="vendor-content">
+<tr><th>Lori's Suggestions & Preferences</th></tr>
+<%=render partial: 'vendors/supply/dannyThomas'%>
+<%=render partial: 'vendors/supply/dannyThomas'%>
+<%=render partial: 'vendors/supply/dannyThomas'%>
+</table>
+</div>
