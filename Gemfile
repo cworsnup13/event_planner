@@ -36,6 +36,9 @@ gem 'mongo_mapper', :git => "git://github.com/mongomapper/mongomapper.git", :tag
 gem 'mongo'
 #gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
+
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
