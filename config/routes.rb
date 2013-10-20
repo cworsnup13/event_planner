@@ -9,7 +9,7 @@ Lori::Application.routes.draw do
 
   # Example of regular route:
      get 'about_path' => 'main#viewAbout'
-
+     get 'admin_home' => 'account#admin_index'
      get 'creations_path' => 'creations#index'
      get 'creations/:projectid' => 'creations#show'
      get 'current_user_path' => 'account#index'
@@ -18,7 +18,9 @@ Lori::Application.routes.draw do
      get 'tools_path' => 'tools#index'
      get 'contact_path' => 'main#viewContact'
      get 'vendors_path' => 'vendors#index' 
-     get 'vendors_path/:vendortype' => 'vendors#show' 
+     get 'vendors_path/:vendortype' => 'vendors#show'
+
+     get 'make_admin' => 'account#tempMakeAdmin' 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
@@ -64,4 +66,5 @@ Lori::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
 end

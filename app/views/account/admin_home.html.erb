@@ -1,0 +1,23 @@
+
+Here is a list of the current open contact forms
+<div class="formHolder">
+
+<%ContactForm.find_each do |form|%>
+<%next if form.resolved != @closed%>
+<p class="formbox">
+Name: <%=form.name%><br>
+Email: <%=form.email%><br>
+Phone: <%=form.phone%><br>
+Created: <%=form.created_at%><br>
+Message: <%=form.message%><br>
+</p>
+<%if !@closed%>
+<%= link_to "Resolve",:controller => "account",:action => "admin_index", :resolved => form.id%>
+<%else%>
+<%= link_to "Reopen",:controller => "account",:action => "admin_index", :resolved => form.id, :status => @closed%>
+<%end%>
+<% end %>
+</div>
+<br>
+<br>
+<%= link_to "Toggle Status",:controller => "account",:action => "admin_index", :status => !@closed%>

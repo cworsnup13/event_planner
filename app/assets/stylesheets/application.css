@@ -26,3 +26,9 @@
   width:900px;
   height:450px;
 }
+
+#flash-container {
+  background-color:red;
+  text-align:center;
+  margin-bottom:2em;
+}

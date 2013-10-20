@@ -1,14 +1,14 @@
 <% content_for :contactform do%>
 
-<%= form_tag("/submitContact", method: "get") do %>
+<%= form_tag("/submitContact", method: "get", :class => "contactform") do %>
   <p class="form_labels">Full Name</p>
-  <%= text_field_tag(:name) %>
+  <%= text_field_tag(:name,"",:class => "required") %>
   <p class="form_labels">Phone Number</p>
-  <%= text_field_tag(:phone) %>
+  <%= text_field_tag(:phone,"",:class => "required tel") %>
   <p class="form_labels">Email Address</p>
-  <%= text_field_tag(:email) %>
+  <%= text_field_tag(:email,"",:class => "required email") %>
   <p class="form_labels">Short Description</p>
-  <textarea id="desc" name="desc" rows="5" cols="50"></textarea>
+  <textarea id="desc" name="desc" rows="5" cols="50" class="required"></textarea>
   <br>
   <%= submit_tag("Submit") %>
 

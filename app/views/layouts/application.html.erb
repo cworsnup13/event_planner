@@ -22,8 +22,10 @@
   <%= render 'layouts/header'%>
   <div class="container">
     <section id="content">
+      <div id="flash-container">
       <%=flash[:notice]%>
-      <%=flash[:alert]%>      
+      <%=flash[:alert]%>
+      </div>      
       <%= yield %>
     </section>
     <section id="sidebar">
