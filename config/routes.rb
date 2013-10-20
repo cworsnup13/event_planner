@@ -1,6 +1,5 @@
 Lori::Application.routes.draw do
   devise_for :users
-  #devise_for :users
   get "main/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -13,7 +12,7 @@ Lori::Application.routes.draw do
 
      get 'creations_path' => 'creations#index'
      get 'creations/:projectid' => 'creations#show'
-
+     get 'current_user_path' => 'account#index'
      get 'profile_path' => 'profile#index'
      get 'submitContact' => 'main#acceptForm'
      get 'tools_path' => 'tools#index'

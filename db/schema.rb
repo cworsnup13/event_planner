@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20131018025451) do
     t.string   "email"
     t.string   "phone"
     t.text     "message"
+    t.boolean  "resolved"
     t.datetime "createdAt"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -34,6 +35,9 @@ ActiveRecord::Schema.define(version: 20131018025451) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.boolean  "is_admin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

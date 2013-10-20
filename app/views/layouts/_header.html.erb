@@ -1,9 +1,13 @@
 <header id="page_header">
   <nav id="utility">
     <p>
-      You are logged in as <b>Guest</b>
+      <% if user_signed_in? %>
+      You are logged in as <b><%=current_user.email%></b>
       <%=link_to "[Your Account]", "current_user_path"%>
-      <%=link_to "[Logout]", "logout_path"%>
+      <% else %>
+      <%=link_to "[Sign in]", "/users/sign_in"%>
+      <% end %>
+      <%=link_to("[Logout]", destroy_user_session_path, :method => :delete)%>
     </p>
   </nav>
   <%=link_to(

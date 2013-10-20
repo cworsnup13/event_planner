@@ -1,5 +1,5 @@
 class MainController < ApplicationController
-  def index
+  def index 
     render :template => 'main/index'
   end
   def viewAbout
@@ -15,6 +15,8 @@ class MainController < ApplicationController
     form.name = @contactname
     form.email = params[:email]
     form.phone = params[:phone]
+    form.message = params[:desc]
+    form.resolved = false
     render :template => 'main/contact' if form.save
   end
 end
