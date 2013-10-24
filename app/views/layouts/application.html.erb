@@ -30,8 +30,8 @@
     </section>
     <section id="sidebar">
       <%= yield :sidebar %>
-      <section id="recent_activity">
-        <header><h1 class="ir" id="recent">Recent Activity</h1></header>
+      <section id="sidebar_sub">
+        <header><%= link_to("-- Contact Me --","/contact_path") %></header>
         <%=  render partial: 'activity_items/recent'%>
       </section>
     </section>

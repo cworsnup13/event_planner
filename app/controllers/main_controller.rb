@@ -17,7 +17,6 @@ class MainController < ApplicationController
     form.phone = params[:phone]
     form.message = params[:desc]
     form.resolved = false
-    form.createdAt = DateTime.now
     render :template => 'main/contact' if form.save
   end
 end

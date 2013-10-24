@@ -2,5 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .formbox {
-  border: 1px solid black;
+  //border: 1px solid black;
+}
+.formsheet {
+  width:60em; 
+  border: 2px solid black; 
+  .form-header {
+    font-weight: bold;
+    background-color:magenta;
+  }
+  span {
+    padding: 0 3em;
+  }
+  .form-message {
+    background-color:white;
+  }
 }

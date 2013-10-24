@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20131018025451) do
     t.string   "phone"
     t.text     "message"
     t.boolean  "resolved"
-    t.datetime "createdAt"
+    t.boolean  "archived"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

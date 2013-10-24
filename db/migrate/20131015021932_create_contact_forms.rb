@@ -6,7 +6,7 @@ class CreateContactForms < ActiveRecord::Migration
       t.string :phone
       t.text :message
       t.boolean :resolved
-
+      t.boolean :archived 
       t.timestamps
     end
   end

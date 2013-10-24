@@ -1,20 +1,29 @@
+<% unless @closed %>
+<h2>Submitted Contact Forms: Unresolved</h2>
+<% else %>
+<h2>Contact Forms: Closed</h2>
+<% end %>
 
-Here is a list of the current open contact forms
 <div class="formHolder">
 
 <%ContactForm.find_each do |form|%>
 <%next if form.resolved != @closed%>
-<p class="formbox">
-Name: <%=form.name%><br>
-Email: <%=form.email%><br>
-Phone: <%=form.phone%><br>
-Created: <%=form.created_at%><br>
-Message: <%=form.message%><br>
-</p>
+<%next if form.archived?%>
+<div class="formbox">
+<table class="formsheet">
+<tr><td class="form-header">
+<span><%=form.name%></span>
+<span><%=form.email%></span>
+<span><%=form.phone%></span>
+<span><%=form.created_at%></span></td></tr>
+<tr><td class=<form-message" colspan="4"><%=form.message%><br></td></tr>
+</table>
+</div>
 <%if !@closed%>
 <%= link_to "Resolve",:controller => "account",:action => "admin_index", :resolved => form.id%>
 <%else%>
 <%= link_to "Reopen",:controller => "account",:action => "admin_index", :resolved => form.id, :status => @closed%>
+<%= link_to "Archive", :controller => "account", :action => "delete_form", :form => form.id%>
 <%end%>
 <% end %>
 </div>

@@ -3,10 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .toolsbox {
-  background-color:purple;
+  border: 2px solid black;
   color:white;
   width:60em;
   height:30em;
+  padding-left:1em;
 }
 
 .tools_title {
@@ -20,11 +21,12 @@
 .tools_desc{
   float:right;
   margin:25px;
+  margin-top:39px;
   width:250px;
-  height:425px;
+  height:27em;
   text-align:center;
   //need vertical alignment
- background-color:green;
+ background-color:gray;
 }
 
 .tools_display {

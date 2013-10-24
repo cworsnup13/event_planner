@@ -10,11 +10,12 @@ Lori::Application.routes.draw do
   # Example of regular route:
      get 'about_path' => 'main#viewAbout'
      get 'admin_home' => 'account#admin_index'
+     get 'delete_form' => 'account#delete_form'
      get 'creations_path' => 'creations#index'
      get 'creations/:projectid' => 'creations#show'
      get 'current_user_path' => 'account#index'
      get 'profile_path' => 'profile#index'
-     get 'submitContact' => 'main#acceptForm'
+     post 'submitContact' => 'main#acceptForm'
      get 'tools_path' => 'tools#index'
      get 'contact_path' => 'main#viewContact'
      get 'vendors_path' => 'vendors#index' 

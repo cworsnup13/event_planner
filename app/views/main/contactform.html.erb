@@ -1,6 +1,6 @@
 <% content_for :contactform do%>
 
-<%= form_tag("/submitContact", method: "get", :class => "contactform") do %>
+<%= form_tag("/submitContact", method: "post", :class => "contactform") do %>
   <p class="form_labels">Full Name</p>
   <%= text_field_tag(:name,"",:class => "required") %>
   <p class="form_labels">Phone Number</p>

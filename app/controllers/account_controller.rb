@@ -28,6 +28,16 @@ def admin_index
   end
 end
 
+def delete_form
+  if !current_user.is_admin?
+  redirect_to action: 'index', :alert => "Unauthorized Access"
+  else
+  form = ContactForm.find(params[:form].to_i)
+  form.archived = true
+  redirect_to action: 'admin_index', :notice => "form deleted" if form.save
+  end
+end
+
 def tempMakeAdmin
   if current_user.email == "admin@admin.com"
      current_user.is_admin = true
