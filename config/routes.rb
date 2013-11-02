@@ -8,18 +8,28 @@ Lori::Application.routes.draw do
   root 'main#index'
 
   # Example of regular route:
+     
      get 'about_path' => 'main#viewAbout'
+     get 'account_details_path' => 'account#userIndex'
      get 'admin_home' => 'account#admin_index'
      get 'delete_form' => 'account#delete_form'
+     get 'color_scheme_path' => 'account#colorscheme'
+     post 'color_scheme_path' => 'account#colorscheme'
+     get 'create_event_path' => 'account#createEvent'
+     post 'create_event_path' => 'account#createEvent'
      get 'creations_path' => 'creations#index'
      get 'creations/:projectid' => 'creations#show'
      get 'current_user_path' => 'account#index'
+     post 'edit_user_path' => 'account#userEdit'
+     get 'event_index_path' => 'account#eventIndex' 
      get 'profile_path' => 'profile#index'
      post 'submitContact' => 'main#acceptForm'
      get 'tools_path' => 'tools#index'
      get 'contact_path' => 'main#viewContact'
      get 'vendors_path' => 'vendors#index' 
      get 'vendors_path/:vendortype' => 'vendors#show'
+     get 'vendor_list_path' => 'account#vendorlist'
+     post 'vendor_list_path' => 'account#vendorlist'
 
      get 'make_admin' => 'account#tempMakeAdmin' 
   # Example of named route that can be invoked with purchase_url(id: product.id)

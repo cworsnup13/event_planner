@@ -1,0 +1,21 @@
+<p>
+<%=link_to("<-- account_home","current_user_path")%>
+</p>
+
+<h1>Color Scheme</h1>
+
+<table class="colorSchemeLarge"><tr>
+  <% @colorArray.each_with_index do |v,i|%>
+    <td style="background-color:<%=@colorArray[i]%>;"></td>
+  <% end %>
+</tr>
+<tr>
+<%= form_tag("color_scheme_path", method: 'post', :class => "formtag") do %>
+  <% @colorArray.each_with_index do |v,i|%>
+    <td>
+      <%= text_field_tag("color#{i}",@colorArray[i]) %>
+    </td>
+  <% end %>
+</tr></table>
+<%= submit_tag("Submit") %>
+<% end %>

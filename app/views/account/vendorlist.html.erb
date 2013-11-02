@@ -1,0 +1,18 @@
+<%=form_tag("vendor_list_path", method: "post", :class => "formtag") do%>
+  <p class="form_labels">Vendor List</p>
+  <h3><a href="#" id="addVendor">Add Another Input Box</a></h3>
+  <div id="vendor-container">
+  <% if @accounts.nil?%> 
+    <p>
+    <%= text_field_tag('vendor_1',"",:class => "text_field required", :placeholder => 'Vendor Name') %>
+    </p> 
+  <% else %>
+  <!--For each vendor -->
+  <p>
+  <%= text_field_tag(:vendor,@accounts.vendors,:class => "text_field required") %>
+  </p>
+  <% end %>
+</div>
+  <br>
+  <%= submit_tag("Submit") %>
+<% end %>

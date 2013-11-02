@@ -1,0 +1,15 @@
+<% content_for :event_form do %>
+<%=form_tag("create_event_path", method: "post", :class => "formtag") do%>
+  <p class="form_labels">Event Name</p>
+  <%= text_field_tag(:name,"#{@accounts.eventName}",:class => "text_field required") %>
+  <p class="form_labels">Event Date</p>
+  <%= text_field_tag(:date,"#{@accounts.eventDate}",:class => "text_field required") %>
+  <p class="form_labels">Number of Attendees</p>
+  <%= text_field_tag(:attendeeCount,"#{@accounts.attendeeCount}",:class => "number_field required") %>
+  <p class="form_labels">Short Description/Notes</p>
+  <textarea id="desc" name="desc" rows="5" cols="50" class="paragraph_field required"><%=@accounts.notes%></textarea>
+  <br>
+  <%= submit_tag("Submit") %>
+<% end %>
+
+<% end %>

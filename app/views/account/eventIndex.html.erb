@@ -1,0 +1,13 @@
+<p>
+<%=link_to("<-- account_home","current_user_path")%>
+</p>
+
+This is the events index
+
+<% if @accounts.nil? %>
+  <% render :template => 'account/createEventForm'%>
+  <%= yield :event_form %>
+<% else %>
+  <% render :template => 'account/editEventForm'%>
+  <%= yield :event_form %>
+<% end %>

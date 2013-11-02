@@ -2,8 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.toolsbox-container {
+  width:60em;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 .toolsbox {
-  border: 2px solid black;
+  background-color:#DDCFF2;
+  border: 2px solid #575919;
   color:white;
   width:60em;
   height:30em;
@@ -20,16 +27,30 @@
 
 .tools_desc{
   float:right;
-  margin:25px;
+  margin:15px;
   margin-top:39px;
+  padding:0 10px;
   width:250px;
   height:27em;
-  text-align:center;
+  text-align:left;
   //need vertical alignment
- background-color:gray;
+ background-color:#61731F;
 }
+
+//.contentMainTitle {
+//  padding-right:5em;
+//}
+
+//.leadingSubtitle {
+ // padding-right:15em;
+//}
 
 .tools_display {
   width: 41em;
   height: 27em;
+}
+
+.linkToAccount {
+  color:#F1C093;
+  text-align:center;
 }

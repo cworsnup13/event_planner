@@ -19,7 +19,7 @@ var fn = function(){
   var footerPos = $("#page_footer").position().top;
   var headerPos = $("#page_header").position().top;
   $("#sidebar").css("height",footerPos-120-headerPos);
-
+  $(".formtag").validate();
 };
 $(document).on('page:load', fn);
 $(document).ready(fn);

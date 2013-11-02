@@ -1,5 +1,44 @@
-<h3>The Persistent Custom</h3>
-<p>
-This will be something persistent that follows the customer around with them. Not sure what it will be quite just yet.
-</p>
+<% if user_signed_in?%>
+<!--User is signed-in-->
+<h3 class="sidebarHeader">Customer Specific Information</h3>
+<%loadAccounts()%>
+<% if @accounts.nil?%>
+<p>Account: <%=current_user.email%></p>
+<p>You have not created an event.</p>
+<%=link_to("Create an Event Now","create_event_path")%>
+<%else%>
+<div class="sidebar-accountInfo">
+<p>My Event Name: <%=@accounts.eventName%></p>
+<p>My Event Date: <%=@accounts.eventDate%></p>
+<p>My Total Guests: <%=@accounts.attendeeCount%></p>
+<p><b><%=link_to('My Color Scheme','color_scheme_path')%></b></p>
+<% if @accounts.colorScheme.nil? %>
+  <%=link_to("Create a color scheme","color_scheme_path")%>
+<% else %>
+<%colors=@accounts.colorScheme.split(",")%>
+<a href='color_scheme_path'>
+<table class="colorScheme"><tr>
+<%colors.each_with_index do |v,i|%>
+<td style="background-color:<%=colors[i]%>;"></td> <!--Eventually populate from account-->
+<% end %>
+</tr></table>
+</a>
+<% end %>
+<p><b>My Vendors</b></p>
+<% if @accounts.vendors.nil? %>
+<%=link_to("Add Vendors","vendor_list_path")%>
+<% else %>
+<%=link_to("Edit Vendor List","vendor_list_path")%>
+<% end %>
 
+</div>
+<% end %>
+<!--User is not signedin -->
+<% else %>
+<h3 class="sidebarHeader">Account Display</h3>
+<p>
+As you explore, you may find it useful to save your ideas. 
+<br><br>
+By <b><%=link_to("Signing In",'/users/sign_in')%></b> we can both keep track and share ideas to make your event great.  
+</p>
+<% end %>
