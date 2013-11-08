@@ -1,16 +1,25 @@
+<p>
+<%=link_to("<-- account_home","current_user_path")%>
+</p>
+
 <%=form_tag("vendor_list_path", method: "post", :class => "formtag") do%>
   <p class="form_labels">Vendor List</p>
-  <h3><a href="#" id="addVendor">Add Another Input Box</a></h3>
+  <h3><a href="#" id="addVendor">Add Another Vendor</a></h3>
   <div id="vendor-container">
   <% if @accounts.nil?%> 
     <p>
-    <%= text_field_tag('vendor_1',"",:class => "text_field required", :placeholder => 'Vendor Name') %>
+    <span><%= text_field_tag('vendor_1',"",:class => "text_field required", :placeholder => 'Vendor Name') %></span>
+    <span><%= text_field_tag('anotherbox',"",:class => "text_field", :placeholder => 'Vendor Type') %></span>
     </p> 
   <% else %>
-  <!--For each vendor -->
+  <% @vendorList.each_with_index do |v,i|%>
   <p>
-  <%= text_field_tag(:vendor,@accounts.vendors,:class => "text_field required") %>
+    <span><%= text_field_tag("vendor_#{i+1}",v,:class => "text_field") %></span>
+    <span><%= text_field_tag('anotherbox',"",:class => "text_field", :placeholder => 'Vendor Type') %></span>
+    <span><%= text_field_tag('anotherbox2',"",:class => "text_field", :placeholder => 'Quoted Price') %></span>
+    <span><%= text_field_tag('anotherbox3',"",:class => "text_field", :placeholder => 'Phone Number') %></span>
   </p>
+  <% end %>
   <% end %>
 </div>
   <br>

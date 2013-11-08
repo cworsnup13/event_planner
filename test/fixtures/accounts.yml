@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  userID: MyString
+  eventName: MyString
+  eventDate: MyString
+  attendeeCount: 1
+  attendeeList: MyString
+  colorScheme: MyString
+  vendors: MyString
+  notes: MyString
+  todoList: MyString
+
+two:
+  userID: MyString
+  eventName: MyString
+  eventDate: MyString
+  attendeeCount: 1
+  attendeeList: MyString
+  colorScheme: MyString
+  vendors: MyString
+  notes: MyString
+  todoList: MyString

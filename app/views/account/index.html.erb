@@ -17,10 +17,10 @@ Saved notes: <%=@accounts.notes%><br>
 </tr></table>
 <%=link_to("Attendee List","#") unless @accounts.attendeeList.nil?%>
 <p><b>Attendee List</b></p>
-<% if @accounts.vendors.nil? %>
-  <%=link_to("Add Attendees","vendor_list_path")%>
+<% if @accounts.attendeeList.nil? %>
+  <%=link_to("Add Attendees","attendee_list_path")%>
 <% else %>
-  <%=link_to("Edit Attendee List","vendor_list_path")%>
+  <%=link_to("Edit Attendee List","attendee_list_path")%>
 <% end %>
 
 <p><b>My Vendors</b></p>
@@ -32,9 +32,9 @@ Saved notes: <%=@accounts.notes%><br>
 
 <p><b>To-do's</b></p>
 <% if @accounts.vendors.nil? %>
-  <%=link_to("Add To-do item","vendor_list_path")%>
+  <%=link_to("Add To-do item","todo_list_path")%>
 <% else %>
-  <%=link_to("Edit To-do List","vendor_list_path")%>
+  <%=link_to("Edit To-do List","todo_list_path")%>
 <% end %>
 <%end%>
 <h3>Tools</h3>

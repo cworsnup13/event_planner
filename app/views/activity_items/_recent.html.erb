@@ -28,6 +28,9 @@
 <% if @accounts.vendors.nil? %>
 <%=link_to("Add Vendors","vendor_list_path")%>
 <% else %>
+<% @accounts.vendors.split(",").each do |v| %>
+  <p><%=v%></p>
+<% end %>
 <%=link_to("Edit Vendor List","vendor_list_path")%>
 <% end %>
 

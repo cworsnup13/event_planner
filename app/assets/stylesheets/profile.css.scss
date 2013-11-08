@@ -2,12 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .profile-intro {
-  height:400px;  
+  width:25em;
 }
 
 .plannerImg {
-  width:400px;
-  height:400px;
+  width:25em;
+  height:25em;
 }
 
 .profile-plannerImg {
@@ -15,11 +15,21 @@
 }
 
 .profile-categ-holder {
-  
+  width:47em;
+  margin-left:auto;
+  margin-right:auto; 
   td {border:2px solid black;}
   .spacer {border:0;width:1em;}
 }
 .profile-category {
-  width:250px;
-  height:250px;
+  width:15em;
+  height:15em;
+}
+
+.intro-holder {
+  width: 50em;
+  height: 25em;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:3em;  
 }

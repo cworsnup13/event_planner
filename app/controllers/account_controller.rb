@@ -2,6 +2,10 @@ class AccountController < ApplicationController
 
 
 def index 
+  if current_user.is_admin?
+    redirect_to :controller => 'admin', :action => 'index' 
+    return
+  end
   query =  current_user.accounts.to_i 
   @accounts=Account.find(query) unless current_user.accounts.nil?
   if @accounts.colorScheme.nil?
@@ -9,48 +13,7 @@ def index
   else
     @colorArray = @accounts.colorScheme.split(",")
   end
-  if current_user.is_admin?
-    redirect_to action: 'admin_index' 
-    return
-  end
   render :template => 'account/index'
-end
-
-def admin_index
-  if !current_user.is_admin?
-    flash[:alert]= "Unauthorized Access"
-    redirect_to action: 'index', :alert => "Unauthorized Access"
-    return
-  end
-  @closed = false
-  @closed = true if params[:status] == "true"
-  unless params[:resolved].nil?
-    @resolved = params[:resolved]
-    form = ContactForm.find(@resolved.to_i)
-    form.resolved = !@closed
-    render :template => 'account/admin_home' if form.save
-  else
-    # log form save error
-    render :template => 'account/admin_home'
-  end
-end
-
-def delete_form
-  if !current_user.is_admin?
-  redirect_to action: 'index', :alert => "Unauthorized Access"
-  else
-  form = ContactForm.find(params[:form].to_i)
-  form.archived = true
-  redirect_to action: 'admin_index', :notice => "form deleted" if form.save
-  end
-end
-
-def tempMakeAdmin
-  if current_user.email == "admin@admin.com"
-     current_user.is_admin = true
-     flash[:notice] = "made an admin"
-  end
-  redirect_to action: 'index' if current_user.save
 end
 
 def eventIndex
@@ -93,12 +56,23 @@ def colorscheme
   end
 end
 
-def vendorlist
-unless params[:vendor_1].nil?
+def vendorlist 
   query =  current_user.accounts.to_i
   @accounts=Account.find(query)
-  @accounts.vendors = "My VENDOR" 
- flash[:notice]="Vendors Updated" if @accounts.save
+unless params[:vendor_1].nil?
+i = 1
+saveList = ""
+while !params["vendor_#{i}"].nil?
+  saveList << params["vendor_#{i}"]
+  saveList << ","
+  i+=1
+end
+@accounts.vendors = saveList
+@accounts.save
+flash[:notice]="Vendors Updated" if @accounts.save
+end
+unless @accounts.vendors.nil?
+  @vendorList = @accounts.vendors.split(",")
 end
 render :template => 'account/vendorlist'
 end
