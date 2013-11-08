@@ -38,6 +38,8 @@ gem 'mongo'
 gem 'bson_ext'
 
 gem 'devise'
+gem 'execjs'
+gem 'therubyracer'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,3 +1,4 @@
+=begin
 MongoMapper.connection = Mongo::Connection.new('localhost', 27017)
 MongoMapper.database = "lori-#{Rails.env}"
 if defined?(PhusionPassenger)
@@ -5,4 +6,4 @@ if defined?(PhusionPassenger)
     MongoMapper.connection.connect if forked
   end
 end
-
+=end
