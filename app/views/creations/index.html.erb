@@ -12,8 +12,8 @@
 <div class="pic-table-holder">
 <h2>Creations</h2>
 <table>
-<% 8.times do |iter|%>
-<% if iter % 2 == 0 %>
+<% for iter in 1..6 do %>
+<% if iter % 2 == 1 %>
   <tr>
 <% end %>
 <td>
@@ -24,7 +24,7 @@
 		 :class => "creation_thumb"),
                  "/creations/#{iter}") %>
 </td>
-<% if iter % 2 == 1 %>
+<% if iter % 2 == 0 %>
   </tr>
 <% end %>
 <% end %>

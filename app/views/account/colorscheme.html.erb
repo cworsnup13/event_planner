@@ -4,13 +4,13 @@
 
 <h1>Color Scheme</h1>
 
+<%= form_tag("color_scheme_path", method: 'post', :class => "formtag") do %>
 <table class="colorSchemeLarge"><tr>
   <% @colorArray.each_with_index do |v,i|%>
     <td style="background-color:<%=@colorArray[i]%>;"></td>
   <% end %>
 </tr>
 <tr>
-<%= form_tag("color_scheme_path", method: 'post', :class => "formtag") do %>
   <% @colorArray.each_with_index do |v,i|%>
     <td>
       <%= text_field_tag("color#{i}",@colorArray[i]) %>

@@ -32,15 +32,15 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'mongo_mapper', :git => "git://github.com/mongomapper/mongomapper.git", :tag => "v0.13.0.beta2"
-gem 'mongo'
+#gem 'mongo_mapper', :git => "git://github.com/mongomapper/mongomapper.git", :tag => "v0.13.0.beta2"
+#gem 'mongo'
 #gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
 
 gem 'devise'
 gem 'execjs'
 gem 'therubyracer'
-
+gem 'pg'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

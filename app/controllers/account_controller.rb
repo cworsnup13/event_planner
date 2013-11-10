@@ -7,8 +7,9 @@ def index
     return
   end
   query =  current_user.accounts.to_i 
+  
   @accounts=Account.find(query) unless current_user.accounts.nil?
-  if @accounts.colorScheme.nil?
+  if @accounts.nil? || @accounts.colorScheme.nil?
     @colorArray = ['#f','#f','#f','#f','#f']
   else
     @colorArray = @accounts.colorScheme.split(",")
@@ -43,7 +44,7 @@ def colorscheme
     else
       @colorArray = @accounts.colorScheme.split(",")
     end
-    render :template => 'account/colorscheme'
+    render :template => 'account/colorscheme' if @accounts.save
   else 
     colorString = ""
     for i in 0..4 do
@@ -60,19 +61,21 @@ def vendorlist
   query =  current_user.accounts.to_i
   @accounts=Account.find(query)
 unless params[:vendor_1].nil?
-i = 1
-saveList = ""
-while !params["vendor_#{i}"].nil?
-  saveList << params["vendor_#{i}"]
-  saveList << ","
-  i+=1
-end
-@accounts.vendors = saveList
-@accounts.save
-flash[:notice]="Vendors Updated" if @accounts.save
+  i = 1
+  saveList = ""
+  while !params["vendor_#{i}"].nil?
+    saveList << params["vendor_#{i}"]
+    saveList << ","
+    i+=1
+  end
+  @accounts.vendors = saveList
+  @accounts.save
+  flash[:notice]="Vendors Updated" if @accounts.save
 end
 unless @accounts.vendors.nil?
   @vendorList = @accounts.vendors.split(",")
+else
+  @vendorList = []
 end
 render :template => 'account/vendorlist'
 end

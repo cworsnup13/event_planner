@@ -3,10 +3,10 @@ Hello <%=current_user.email%>!
 <% unless current_user.accounts.nil?%>
 <h3>Summary of Your Event</h3>
 
-Event Name: <%=@accounts.eventName%><br>
-Event Date: <%=@accounts.eventDate%><br>
-Number of Attendees: <%=@accounts.attendeeCount%><br>
-Saved notes: <%=@accounts.notes%><br>
+<b>Event Name:</b> <%=@accounts.eventName%><br>
+<b>Event Date:</b> <%=@accounts.eventDate%><br>
+<b>Number of Attendees:</b> <%=@accounts.attendeeCount%><br>
+<b>Saved notes:</b> <%=@accounts.notes%><br>
 <p><b>Color Scheme</b></p>
 <%=link_to("Choose Color Scheme","color_scheme_path")%>
 <table class="colorScheme"><tr>
