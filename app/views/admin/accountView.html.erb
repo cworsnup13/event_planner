@@ -1,0 +1,45 @@
+<h3>ADMIN VIEW</h3>
+User <%=@user.email%>!
+<h3>Summary of The Event</h3>
+
+<b>Event Name:</b> <%=@accounts.eventName%><br>
+<b>Event Date:</b> <%=@accounts.eventDate%><br>
+<b>Number of Attendees:</b> <%=@accounts.attendeeCount%><br>
+<b>Saved notes:</b> <%=@accounts.notes%><br>
+<p><b>Color Scheme</b></p>
+<%=link_to("Choose Color Scheme",:controller => 'admin', :action => 'colorscheme', :account => @accounts.id )%>
+<table class="colorScheme"><tr>
+<% @colorArray.each_with_index do |v,i|%>
+<td style="background-color:<%=@colorArray[i]%>;"></td> <!--Eventually populate from account-->
+<% end %>
+
+</tr></table>
+<%=link_to("Attendee List","#") unless @accounts.attendeeList.nil?%>
+<p><b>Attendee List</b></p>
+<% if @accounts.attendeeList.nil? %>
+  <%=link_to("Add Attendees","attendee_list_path")%>
+<% else %>
+  <%=link_to("Edit Attendee List","attendee_list_path")%>
+<% end %>
+
+<p><b>My Vendors</b></p>
+<% if @accounts.vendors.nil? %>
+<%=link_to("Add Vendors",:controller => 'admin', :action => 'vendorlist', :account => @accounts.id)%>
+<% else %>
+<%=link_to("Edit Vendors",:controller => 'admin', :action => 'vendorlist', :account => @accounts.id)%>
+<% end %>
+
+<p><b>To-do's</b></p>
+<% if @accounts.vendors.nil? %>
+  <%=link_to("Add To-do item","todo_list_path")%>
+<% else %>
+  <%=link_to("Edit To-do List","todo_list_path")%>
+<% end %>
+<h3>Tools</h3>
+
+<p><%= link_to("Edit your account",:controller => 'admin', :action => 'userIndex', :account => @accounts.id) %></p>
+<% if @accounts.nil? %>
+<p><%= link_to("Create an Event",:controller => 'admin', :action => 'eventIndex', :account => @accounts.id) %></p>
+<% else %>
+<p><%= link_to("Edit an Event",:controller => 'admin', :action => 'eventIndex', :account => @accounts.id) %></p>
+<% end %>

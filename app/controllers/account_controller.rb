@@ -24,7 +24,11 @@ def eventIndex
 end
 
 def createEvent
-  account=Account.new
+  if params[:account].nil?
+    account = Account.new
+  else
+    account = Account.find(params[:account])
+  end
   account.eventName = params[:name]
   account.eventDate = params[:date]
   account.attendeeCount = params[:attendeeCount]

@@ -1,0 +1,8 @@
+<p>
+<%=link_to("<-- account_home",:controller => 'admin', :action => 'viewAccount',:account => @accounts.id)%>
+</p>
+
+This is the events index
+
+  <% render :template => 'admin/editEventForm'%>
+  <%= yield :event_form %>

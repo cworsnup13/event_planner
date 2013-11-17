@@ -1,0 +1,21 @@
+
+<p> 
+<%=link_to("<-- account_home",:controller => 'admin', :action => 'viewAccount',:account => @accounts.id)%>
+</p>
+
+<p>Account index Page</p>
+
+<%=form_tag("admin_edit_account", method: "post", :class => "formtag") do%>
+  <p class="form_labels">First Name</p>
+  <%= text_field_tag(:firstName, @user.first_name ||= '',:class => "text_field required") %>
+  <p class="form_labels">Last Name</p>
+  <%= text_field_tag(:lastName,@user.last_name ||= '',:class => "text_field required") %>
+  <p class="form_labels">Email</p>
+  <%= text_field_tag(:email,@user.email,:class => "number_field required") %>
+
+  <br>
+  <%= hidden_field_tag("account",@accounts.id) %>
+  <%= submit_tag("Submit") %>
+  <p>edit password link </p>
+<% end %>
+

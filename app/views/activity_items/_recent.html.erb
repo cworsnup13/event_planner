@@ -6,7 +6,7 @@
   <p>Account: <%=current_user.email%></p>
   <p>You have not created an event.</p>
   <%=link_to("Create an Event Now","create_event_path")%>
-<%elsif%>
+<%elsif current_user.is_admin?%>
   <p>ADMIN SIDEBAR</p>
   <p><%= link_to("Contact Form Tool",'form_index') %></p>
   <p><%= link_to("Customer Tool",'customer_tool_path') %></p>

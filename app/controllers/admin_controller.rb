@@ -105,7 +105,7 @@ def userEdit
   @user.first_name = params[:firstName]
   @user.last_name = params[:lastName]
   @user.email = params[:email]
-  redirect_to :action => 'viewAccount' if @user.save
+  redirect_to :action => 'viewAccount',:account => @accounts.id if @user.save
 end
 
 def tempMakeAdmin
@@ -119,6 +119,19 @@ end
 def eventIndex
   @accounts=Account.find(params[:account]) 
   render :template => 'admin/eventIndex'
+end
+
+def createEvent
+  if params[:account].nil?
+    account = Account.new
+  else
+    account = Account.find(params[:account])
+  end
+  account.eventName = params[:name]
+  account.eventDate = params[:date]
+  account.attendeeCount = params[:attendeeCount]
+  account.notes = params[:desc]
+  redirect_to :action => 'viewAccount',:account => account.id if account.save
 end
 
 end

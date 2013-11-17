@@ -18,7 +18,14 @@ There are a variety of existing palettes and tools to help choose your 5-color s
 It is a great tool to help visualize a coordinated color theme from invitations, to linens, to powerpoints!<br><br>
 </p>
 <p class="linkToAccount">
-You can save your color palette in <b>your account.</b>
+You can save your color palette in 
+<% if user_signed_in? && !current_user.accounts.nil?%>
+<b><%=link_to("your account.","color_scheme_path")%></b>
+<% elsif user_signed_in? && current_user.accounts.nil?%>
+<b><%=link_to("your account. Create an Event Now!!","create_event_path")%></b>
+<% else %>
+<b><%=link_to("your account. Sign Up Now!","/users/sign_up")%></b>
+<% end %>
 </p></div>
 <div class="tools_title"><a href='http://kuler.adobe.com'>Adobe Kuler</a></div>
 <%=link_to( image_tag("kuler_display.png",:class => "tools_display"),'http://kuler.adobe.com')%>

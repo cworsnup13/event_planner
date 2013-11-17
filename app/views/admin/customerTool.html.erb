@@ -1,0 +1,12 @@
+<h3>Customer Tool</h3>
+<table class="customerTable">
+<% @customers.each do |c| %>
+<tr>
+<td><%= c.first_name unless c.first_name.nil?%></td>
+<td><%= c.last_name %></td>
+<td><%= c.email %></td>
+<td><%= c.last_sign_in_at %></td>
+<td><%= link_to("Account Information",:controller => 'admin', :action => 'viewAccount', :account => c.accounts) unless c.accounts.nil? %> </td>
+</tr>
+<% end %>
+</table>

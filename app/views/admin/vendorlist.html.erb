@@ -1,0 +1,28 @@
+<p>
+<%=link_to("<-- account_home",:controller => 'admin', :action => 'viewAccount',:account => @accounts.id)%>
+</p>
+
+<%=form_tag("admin_vendors", method: "post", :class => "formtag") do%>
+  <p class="form_labels">Vendor List</p>
+  <h3><a href="#" id="addVendor">Add Another Vendor</a></h3>
+  <div id="vendor-container">
+  <% if @accounts.nil?%> 
+    <p>
+    <span><%= text_field_tag('vendor_1',"",:class => "text_field required", :placeholder => 'Vendor Name') %></span>
+    <span><%= text_field_tag('anotherbox',"",:class => "text_field", :placeholder => 'Vendor Type') %></span>
+    </p> 
+  <% else %>
+  <% @vendorList.each_with_index do |v,i|%>
+  <p>
+    <span><%= text_field_tag("vendor_#{i+1}",v,:class => "text_field") %></span>
+    <span><%= text_field_tag('anotherbox',"",:class => "text_field", :placeholder => 'Vendor Type') %></span>
+    <span><%= text_field_tag('anotherbox2',"",:class => "text_field", :placeholder => 'Quoted Price') %></span>
+    <span><%= text_field_tag('anotherbox3',"",:class => "text_field", :placeholder => 'Phone Number') %></span>
+  </p>
+  <% end %>
+  <% end %>
+</div>
+  <br>
+  <%= hidden_field_tag("account",@accounts.id) %>
+  <%= submit_tag("Submit") %>
+<% end %>

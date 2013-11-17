@@ -1,0 +1,22 @@
+<p>
+<%=link_to("<-- account_home",:controller => 'admin', :action => 'viewAccount',:account => @accounts.id)%>
+</p>
+
+<h1>Color Scheme</h1>
+
+<%= form_tag("admin_colorscheme", method: 'post', :class => "formtag") do %>
+<table class="colorSchemeLarge"><tr>
+  <% @colorArray.each_with_index do |v,i|%>
+    <td style="background-color:<%=@colorArray[i]%>;"></td>
+  <% end %>
+</tr>
+<tr>
+  <% @colorArray.each_with_index do |v,i|%>
+    <td>
+      <%= text_field_tag("color#{i}",@colorArray[i]) %>
+    </td>
+  <% end %>
+</tr></table>
+<%= hidden_field_tag("account", @accounts.id)%>
+<%= submit_tag("Submit") %>
+<% end %>
